@@ -9,6 +9,7 @@ import {
     AccoundLi,
     UpArrow,
     DownArrow,
+    DropDown1
 } from "./NavbarElements.js"
 import LogoImg from "../../images/logo.svg"
 import MobileNavbar from "../MobileNavbar";
@@ -26,14 +27,21 @@ const Navbar = () => {
         <>
         <Links>
             <LinksLi>
-            Features <UpArrow/>
-            <div>
-              <Dropdown1/>
-            </div>
+              Features<UpArrow/>
+              <div>
+                <DropDown1/>
+              </div>
             </LinksLi>
 
-            <LinksLi>Company <UpArrow/></LinksLi>
+            <LinksLi>
+              Company<UpArrow/>
+              <div>
+                <Dropdown2/>
+              </div>
+            </LinksLi>
+
             <LinksLi>Careers</LinksLi>
+
             <LinksLi>About</LinksLi>
         </Links>
         <Account>

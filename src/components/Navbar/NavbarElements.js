@@ -2,6 +2,7 @@ import styled from "styled-components"
 import {FaBars} from "react-icons/fa";
 import {GoChevronUp, GoChevronDown} from "react-icons/go"
 import {sizes} from "../../GlobalStyles"
+import {Dropdown1, Dropdown2} from "../MobileNavbar";
 
 
 export const NavbarContainer = styled.nav`
@@ -39,27 +40,42 @@ export const Links = styled.ul`
     justify-content: space-evenly;
     width: 35%;
     min-width: 375px;
-    /* position:relative; */
     @media screen and (max-width:${sizes.tablet}) {
         display: none;
     }
 
-    div{
-        position:absolute;
-        top:9%;
-        left:12%;
-        font-size: 0.7rem;
-    }
-`
+    `
 
 export const UpArrow = styled(GoChevronUp)`
     position: absolute;
+    left: 100%;
 `
 export const DownArrow = styled(GoChevronDown)`
-
+    position: absolute;
+    left: 100%;
 `
 
 export const LinksLi = styled.li`
+    position: relative;
+    outline: 1px green solid;
+    display: flex;
+    justify-content: flex-end;
+
+    div{
+        position:absolute;
+        background-color: var(--white);
+        box-shadow: 0px 0px 2em 20px hsla(0, 0%, 8%, 0.1);
+        border-radius: 10%;
+        padding: 2em;
+        top:3em;
+        font-size: 0.7rem;
+        flex-shrink: 0;
+    }
+
+    &:nth-of-type(2){
+        justify-content: flex-start;
+        /* width:100%; */
+    }
 `
 
 export const Account = styled(Links)`
@@ -69,4 +85,8 @@ export const Account = styled(Links)`
 `
 
 export const AccoundLi = styled(LinksLi)`
+`
+
+export const DropDown1 = styled(Dropdown1)`
+    margin-left: 0;
 `

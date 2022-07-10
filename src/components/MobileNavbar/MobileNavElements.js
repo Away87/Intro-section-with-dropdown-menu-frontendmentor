@@ -71,6 +71,10 @@ export const DownArrow = styled(GoChevronDown)`
 
 export const Dropul = styled.ul`
     margin-left:1em;
+
+    @media screen and (min-width: ${sizes.tablet}){
+        margin-left:0;
+    }
 `
 export const Dropli = styled(LinksLi)`
     display: flex;
