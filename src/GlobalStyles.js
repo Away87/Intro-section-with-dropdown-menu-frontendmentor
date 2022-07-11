@@ -16,10 +16,17 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     :root {
-        --almost-white : hsl(0, 0%, 98%);
-        --medium-grey: hsl(0, 0%, 41%);
-        --almost-black: hsl(0, 0%, 8%);
-        --white: hsl(0, 0%, 100%)
+        --clr-100: hsl(0, 0%, 100%);
+        --clr-200 : hsl(0, 0%, 98%);
+        --clr-700: hsl(0, 0%, 41%);
+        --clr-900: hsl(0, 0%, 8%);
+
+        --fs-xl:clamp(3.5rem, 1vw + 0.05rem, 8rem);
+        --fs-l: clamp(1.5rem, 1vw + 0.05rem, 2rem);
+        --fs-s: clamp(1rem, 1vw + 0.05rem, 2rem);
+        --fs-xs: clamp(0.5rem, 1vw + 0.05rem, 0.9rem);
+
+        --br-main: 50em;
     }
 
     a {
@@ -77,13 +84,4 @@ export const GlobalStyle = createGlobalStyle`
     }
 `
 
-export const sizes = {
-    mobileS: '320px',
-    mobileM: '375px',
-    mobileL: '425px',
-    tablet: '768px',
-    laptop: '1024px',
-    laptopL: '1440px',
-    desktop: '2560px',
-};
 

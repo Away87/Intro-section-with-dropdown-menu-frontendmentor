@@ -1,21 +1,15 @@
 import styled from "styled-components"
 import {GoChevronUp, GoChevronDown} from "react-icons/go"
-import {sizes} from "../../GlobalStyles"
 
-// export const RemainingSpace = styled.div`
-//     width:40%;
-//     height: 100%;
-//     margin-left:auto;
-//     opacity:0.5;
-// `
 export const NavbarContainer = styled.div`
     width: 60%;
     height: 100%;
     position: absolute;
     top:0;
     right:0;
-    color:var(--medium-grey);
-    background-color: var(--white);
+    color:var(--clr-700);
+    background-color: var(--clr-100);
+    font-size: var(--fs-s);
 `
 export const CloseIcon = styled.img`
     position:absolute;
@@ -34,7 +28,7 @@ export const LinksLi = styled.li`
     cursor: pointer;
 
     &:hover{
-        color:var(--almost-black)
+        color:var(--clr-900)
     }
 `
 export const Account = styled(Links)`
@@ -45,7 +39,7 @@ export const AccoundLi = styled(LinksLi)`
     text-align: center;
 
     &:last-child > button {
-        border: 2px solid var(--medium-grey);
+        border: 2px solid var(--clr-700);
         padding: 1em;
     }
     `
@@ -53,18 +47,16 @@ export const Button = styled.button `
     border: none;
     border-radius: 1em;
     background: none;
-    color:var(--medium-grey);
+    color:var(--clr-700);
     width: 80%;
     max-width: 20em;
-    font-size: 1rem;
+    font-size: var(--fs-s);
     text-transform: capitalize;
 `
 
 export const UpArrow = styled(GoChevronUp)`
-
 `
 export const DownArrow = styled(GoChevronDown)`
-    /* position: absolute; */
 `
 
 // DropDown 1
@@ -72,23 +64,32 @@ export const DownArrow = styled(GoChevronDown)`
 export const Dropul = styled.ul`
     margin-left:1em;
 
-    @media screen and (min-width: ${sizes.tablet}){
+    @media screen and (min-width: var(--breakpoint-main)){
         margin-left:0;
+        font-size: var(--fs-s);
     }
 `
 export const Dropli = styled(LinksLi)`
     display: flex;
-    line-height: 2.5em;
     align-items: center;
     padding: 0;
-`
+    font-size: var(--fs-xs);
+    
+    &:nth-of-type(2) {
+        white-space: nowrap;
+    }
+    
+    @media screen and (max-width:var(--breakpoint-main)){
+        line-height: 0.5;
+    }
+    `
 export const DropIcon = styled.img`
     width: 1.5em;
     height: 1.5em;
     margin-right: 10px;
-`
+    `
 export const Droptext = styled.p`
     text-transform: capitalize;
-    font-size: 1rem;
+    white-space: nowrap;
 
 `
