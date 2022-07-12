@@ -2,8 +2,6 @@ import React,{useState} from 'react'
 import { useInterval } from 'usehooks-ts'
 import {
     NavbarContainer,
-    RestSpace,
-
     Logo,
     MobileBar,
     Links,
@@ -27,22 +25,21 @@ const Navbar = () => {
   useInterval(()=>{
     const windowWidth = window.innerWidth
     if (windowWidth > 800) {setMobileNav(false)}
-  }, 500)
+  }, MobileNav ? 100 : null)
+
   return (
     <>
     <NavbarContainer>
         <Logo src={LogoImg} />
-        <RestSpace></RestSpace>
         <MobileBar onClick={()=>setMobileNav(true)}/>
-        {MobileNav ? <MobileNavbar toggleNav={setMobileNav}/> : 
-        <>
+        <MobileNavbar visible={MobileNav ? true : false} toggleNav={()=>setMobileNav()} />
         <Links>
             <LinksLi onClick={
               ()=> {
                 if (Drop1) {setDrop1(false)}
                 else {setDrop1(true)}
               }}>
-              Features{Drop1?<DownArrow/>:<UpArrow/>}
+              <span>Features</span>{Drop1?<DownArrow/>:<UpArrow/>}
               {Drop1 &&<div>
                       <Dropdown1/>
                     </div>}
@@ -53,21 +50,20 @@ const Navbar = () => {
                 if (Drop2) {setDrop2(false)}
                 else {setDrop2(true)}
             }}>
-              Company{Drop2?<DownArrow/>:<UpArrow/>}
+              <span>Company</span>{Drop2?<DownArrow/>:<UpArrow/>}
               {Drop2 &&<div>
                       <Dropdown2/>
                     </div>}
             </LinksLi>
 
-            <LinksLi><a href="#">Careers</a></LinksLi>
+            <LinksLi><a href="#"><span>Careers</span></a></LinksLi>
 
-            <LinksLi><a href="#">About</a></LinksLi>
+            <LinksLi><a href="#"><span>About</span></a></LinksLi>
         </Links>
         <Account>
-            <AccoundLi><Button>Login</Button></AccoundLi>
-            <AccoundLi><Button>Register</Button></AccoundLi>
+            <AccoundLi><button><span>Login</span></button></AccoundLi>
+            <AccoundLi><button><span>Register</span></button></AccoundLi>
         </Account>
-        </>}
     </NavbarContainer>
     </>
   )

@@ -13,6 +13,7 @@ export const GlobalStyle = createGlobalStyle`
     body , html {
         width: 100%;
         height: 100vh;
+        overflow:hidden;
     }
 
     :root {
@@ -30,13 +31,10 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     a {
-        color: var(--medium-grey);
+        color: var(--clr-700);
         text-decoration: none;
     }
 
-    a:hover{
-        color:var(--almost-black);
-    }
 
     // CSS RESET
 

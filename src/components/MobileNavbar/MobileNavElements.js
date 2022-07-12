@@ -1,16 +1,30 @@
-import styled from "styled-components"
+import styled,{keyframes} from "styled-components"
 import {GoChevronUp, GoChevronDown} from "react-icons/go"
+
+export const RemainingSpace = styled.div`
+    position:absolute;
+    top:0;
+    left:0;
+    width:40%;
+    height: 100%;
+    z-index:1;
+    background: rgba(0, 0, 0, 1);
+    opacity: ${props=>props.visible ? "0.7" : "0"};
+    transition:opacity 0.2s ease-in;
+`
 
 export const NavbarContainer = styled.div`
     width: 60%;
     height: 100%;
     position: absolute;
     top:0;
-    right:0;
+    right:${props=>props.visible ? "0" : "-100%"};
     color:var(--clr-700);
     background-color: var(--clr-100);
     font-size: var(--fs-s);
+    transition:right 0.2s ease-in;
 `
+
 export const CloseIcon = styled.img`
     position:absolute;
     top: 1em;
@@ -27,6 +41,9 @@ export const LinksLi = styled.li`
     line-height: 2.5em;
     cursor: pointer;
 
+    span:hover {
+        color:var(--clr-900);
+    }
     &:hover{
         color:var(--clr-900)
     }
@@ -38,23 +55,28 @@ export const Account = styled(Links)`
 export const AccoundLi = styled(LinksLi)`
     text-align: center;
 
+    button {
+        border: none;
+        border-radius: 1em;
+        background: none;
+        color:var(--clr-700);
+        width: 80%;
+        max-width: 20em;
+        font-size: var(--fs-s);
+        text-transform: capitalize;
+        cursor: pointer;
+    }
     &:last-child > button {
         border: 2px solid var(--clr-700);
         padding: 1em;
-    }
-    `
-export const Button = styled.button `
-    border: none;
-    border-radius: 1em;
-    background: none;
-    color:var(--clr-700);
-    width: 80%;
-    max-width: 20em;
-    font-size: var(--fs-s);
-    text-transform: capitalize;
-`
 
+        &:hover {
+            border-color:var(--clr-900)
+        }
+    }
+`
 export const UpArrow = styled(GoChevronUp)`
+
 `
 export const DownArrow = styled(GoChevronDown)`
 `
@@ -64,23 +86,22 @@ export const DownArrow = styled(GoChevronDown)`
 export const Dropul = styled.ul`
     margin-left:1em;
 
-    @media screen and (min-width: var(--breakpoint-main)){
+    @media screen and (min-width: 50em){
         margin-left:0;
-        font-size: var(--fs-s);
     }
 `
 export const Dropli = styled(LinksLi)`
     display: flex;
     align-items: center;
     padding: 0;
-    font-size: var(--fs-xs);
+    font-size: var(--fs-s);
     
     &:nth-of-type(2) {
         white-space: nowrap;
     }
     
-    @media screen and (max-width:var(--breakpoint-main)){
-        line-height: 0.5;
+    &:hover{
+        color:var(--clr-900)
     }
     `
 export const DropIcon = styled.img`
@@ -91,5 +112,8 @@ export const DropIcon = styled.img`
 export const Droptext = styled.p`
     text-transform: capitalize;
     white-space: nowrap;
-
+    /* color: var(--clr-700); */
+    &:hover{
+        color:var(--clr-900)
+    }
 `

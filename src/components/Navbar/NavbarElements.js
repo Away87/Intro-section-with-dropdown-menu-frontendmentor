@@ -5,21 +5,10 @@ import {GoChevronUp, GoChevronDown} from "react-icons/go"
 
 export const NavbarContainer = styled.nav`
     display: flex;
-    outline:1px green solid;
     height: 5em;
     margin: 0 auto;
     align-items: center;
     font-size: var(--fs-s);
-`
-export const RestSpace = styled.div`
-    /* width: 40%;
-    height: 100vh;
-    z-index: 100;
-    position: absolute;
-    margin-left: auto;
-    background:linear-gradient(
-          rgba(0, 0, 0, 0.7), 
-          rgba(0, 0, 0, 0.7)); */
 `
 
 export const Logo = styled.img`
@@ -34,6 +23,7 @@ export const MobileBar = styled(FaBars)`
     font-weight: lighter;
     cursor:pointer;
     margin-left: auto;
+    -webkit-tap-highlight-color: transparent;
     @media screen and (max-width: 50em) {
         display: block;
     }
@@ -71,11 +61,10 @@ export const LinksLi = styled.li`
 
     &:nth-of-type(2){
         justify-content: flex-start;
-        /* width:100%; */
     }
 
-    &:hover {
-        color:var(--almost-black);
+    span:hover {
+        color:var(--clr-900 );
     }
 `
 
@@ -88,6 +77,17 @@ export const Account =styled(Links)`
 `
 
 export const AccoundLi = styled(LinksLi)`
+
+    button {
+        background:none;
+        border:none;
+        font-size:var(--fs-s);
+        color:var(--clr-700);
+        border-radius:20px;
+        line-height: 1;
+        cursor:pointer;
+    }
+    
     &:last-child > button {
         border: 2px solid var(--clr-700);
         padding: 1em;
@@ -101,17 +101,7 @@ export const AccoundLi = styled(LinksLi)`
 
 
 export const Button = styled.button `
-    background:none;
-    border:none;
-    font-size:var(--fs-s);
-    color:var(--clr-700);
-    border-radius:20px;
-    line-height: 1;
-    cursor:pointer;
 
-    &:hover {
-        color:var(--clr-900);
-    }
 `
 
 export const UpArrow = styled(GoChevronUp)`
