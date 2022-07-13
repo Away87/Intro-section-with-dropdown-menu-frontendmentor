@@ -39,7 +39,7 @@ const Navbar = () => {
                 if (Drop1) {setDrop1(false)}
                 else {setDrop1(true)}
               }}>
-              <span>Features</span>{Drop1?<DownArrow/>:<UpArrow/>}
+              <span>Features</span>{Drop1?<UpArrow/> : <DownArrow/>}
               {Drop1 &&<div>
                       <Dropdown1/>
                     </div>}
@@ -50,7 +50,7 @@ const Navbar = () => {
                 if (Drop2) {setDrop2(false)}
                 else {setDrop2(true)}
             }}>
-              <span>Company</span>{Drop2?<DownArrow/>:<UpArrow/>}
+              <span>Company</span>{Drop2?<UpArrow/> : <DownArrow/>}
               {Drop2 &&<div>
                       <Dropdown2/>
                     </div>}

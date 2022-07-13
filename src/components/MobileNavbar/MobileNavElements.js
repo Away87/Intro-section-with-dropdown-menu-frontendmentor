@@ -10,7 +10,7 @@ export const RemainingSpace = styled.div`
     z-index:1;
     background: rgba(0, 0, 0, 1);
     opacity: ${props=>props.visible ? "0.7" : "0"};
-    transition:opacity 0.2s ease-in;
+    transition: opacity 0.2s ease-in;
 `
 
 export const NavbarContainer = styled.div`
@@ -85,7 +85,8 @@ export const DownArrow = styled(GoChevronDown)`
 
 export const Dropul = styled.ul`
     margin-left:1em;
-
+    display:none;
+    
     @media screen and (min-width: 50em){
         margin-left:0;
     }

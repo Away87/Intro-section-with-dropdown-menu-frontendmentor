@@ -8,6 +8,7 @@ export const GlobalStyle = createGlobalStyle`
         margin: 0;
         padding: 0;
         font-family: 'Epilogue', sans-serif;
+        -webkit-tap-highlight-color: transparent;
     }
 
     body , html {

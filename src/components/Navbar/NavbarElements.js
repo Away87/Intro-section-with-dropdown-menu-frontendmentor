@@ -23,7 +23,6 @@ export const MobileBar = styled(FaBars)`
     font-weight: lighter;
     cursor:pointer;
     margin-left: auto;
-    -webkit-tap-highlight-color: transparent;
     @media screen and (max-width: 50em) {
         display: block;
     }

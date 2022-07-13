@@ -24,7 +24,7 @@ import planning from "../../images/icon-planning.svg"
 export const Dropdown1 = ()=>{
   return(
     <>
-    <Dropul>
+    <Dropul className = "dropDown1">
       <Dropli>
         <DropIcon src={todo} alt=""/> <Droptext><a href="#"><span>todo list</span></a></Droptext>
       </Dropli>
@@ -45,7 +45,7 @@ export const Dropdown1 = ()=>{
 export const Dropdown2 = ()=>{
   return(
     <>
-    <Dropul>
+    <Dropul className = "dropDown2">
       <Dropli>
         <Droptext><a href="#"><span>history</span></a></Droptext>
       </Dropli>
@@ -65,31 +65,40 @@ const MobileNavbar = (props) => {
   const [Drop2, setDrop2] = useState(false);
 
   useEffect(()=>{
-    const Container = document.getElementById("navContainer");
-    if (props.visible) {
-      // Container.classList.add("visible")
-    } else {Container.classList.remove("visible")};
-  },[props.visible])
+    const DropDown1 = document.querySelector(".dropDown1")
+    let visible = false;
+    Drop1 ? visible = true : visible = false
+    DropDown1.style.display = visible ? "block" : "none"
+  },[Drop1]);
+
+  useEffect(()=>{
+    const DropDown2 = document.querySelector(".dropDown2")
+    let visible = false;
+    Drop2 ? visible = true : visible = false
+    DropDown2.style.display = visible ? "block" : "none"
+  },[Drop2]);
 
   return (
     <>
     <RemainingSpace visible={props.visible}/>
-    <NavbarContainer id="navContainer" visible={props.visible ? true : false}>
+    <NavbarContainer visible={props.visible ? true : false}>
       <CloseIcon src={Cross} alt="A cross" onClick={()=>props.toggleNav(false)} />
         <Links>
             <LinksLi onClick={()=>{
               if (Drop1) {setDrop1(false)}
               else{setDrop1(true)}
-            }}><span>features</span>{Drop1 ? <DownArrow/> : <UpArrow/>}</LinksLi>
+            }}><span>features</span>{Drop1 ? <UpArrow/> : <DownArrow/>}
+            <Dropdown1/>
+            </LinksLi>
 
-            {Drop1 && <Dropdown1/>}
+
 
             <LinksLi onClick={()=>{
               if (Drop2) {setDrop2(false)}
               else{setDrop2(true)}
-            }}><span>company</span>{Drop2 ? <DownArrow/> : <UpArrow/>}</LinksLi>
-
-            {Drop2 && <Dropdown2/>}
+            }}><span>company</span>{Drop2 ? <UpArrow/> : <DownArrow/>}
+            <Dropdown2/>
+            </LinksLi>
 
             <LinksLi><span>careers</span></LinksLi>
             <LinksLi><span>about</span></LinksLi>
