@@ -13,8 +13,7 @@ export const GlobalStyle = createGlobalStyle`
 
     body , html {
         width: 100%;
-        height: 100vh;
-        overflow:hidden;
+        overflow-x: hidden;
     }
 
     :root {
@@ -24,11 +23,10 @@ export const GlobalStyle = createGlobalStyle`
         --clr-900: hsl(0, 0%, 8%);
 
         --fs-xl:clamp(3.5rem, 1vw + 0.05rem, 8rem);
-        --fs-l: clamp(1.5rem, 1vw + 0.05rem, 2rem);
-        --fs-s: clamp(1rem, 1vw + 0.05rem, 2rem);
-        --fs-xs: clamp(0.5rem, 1vw + 0.05rem, 0.9rem);
+        --fs-l: clamp(1.5rem, 5vw + 0.05rem, 6rem);
+        --fs-s: clamp(1rem, 1vw + 0.05rem, 6rem);
+        --fs-xs: clamp(0.9rem, 1vw + 0.05rem, 0.9rem);
 
-        --br-main: 50em;
     }
 
     a {
@@ -36,6 +34,19 @@ export const GlobalStyle = createGlobalStyle`
         text-decoration: none;
     }
 
+    main {
+        height: calc(100vh - 5em);
+        background-color:var(--clr-100);
+        
+        @media screen and (min-width:40em) {
+            z-index: 1;
+            width:100%;
+            display:flex;
+            margin:0 auto;
+            align-items: center;
+            height: 100vh;
+        }
+    }
 
     // CSS RESET
 
@@ -80,6 +91,10 @@ export const GlobalStyle = createGlobalStyle`
     table {
         border-collapse: collapse;
         border-spacing: 0;
+    }
+
+    a:-webkit-any-link {
+        cursor:auto;
     }
 `
 

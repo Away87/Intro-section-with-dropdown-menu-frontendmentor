@@ -9,6 +9,16 @@ export const NavbarContainer = styled.nav`
     margin: 0 auto;
     align-items: center;
     font-size: var(--fs-s);
+    background-color: var(--clr-100);
+    z-index: 100;
+
+    @media screen and (min-width:40em) {
+        position:absolute;
+        top:0;
+        left:0;
+        right:0;
+        bottom:0;
+    }
 `
 
 export const Logo = styled.img`
@@ -48,7 +58,14 @@ export const LinksLi = styled.li`
     justify-content: flex-end;
     color:var(--clr-700);
     cursor:pointer;
+    text-transform: capitalize;
+    
+    span {
+    }
 
+    &:hover {
+        color:var(--clr-900);
+    }
     div{
         position:absolute;
         background-color: var(--clr-100);
@@ -77,6 +94,11 @@ export const Account =styled(Links)`
 
 export const AccoundLi = styled(LinksLi)`
 
+    &:last-child > button:hover {
+        border-color: var(--clr-900);
+        color:var(--clr-900);
+    }
+
     button {
         background:none;
         border:none;
@@ -91,11 +113,8 @@ export const AccoundLi = styled(LinksLi)`
         border: 2px solid var(--clr-700);
         padding: 1em;
         line-height: 0;
-        
-        &:hover {
-            border-color: var(--clr-900);
-        }
     }
+
 `
 
 

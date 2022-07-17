@@ -6,8 +6,8 @@ export const RemainingSpace = styled.div`
     top:0;
     left:0;
     width:40%;
-    height: 100%;
-    z-index:1;
+    height: 100vh;
+    z-index:100;
     background: rgba(0, 0, 0, 1);
     opacity: ${props=>props.visible ? "0.7" : "0"};
     transition: opacity 0.2s ease-in;
@@ -15,9 +15,10 @@ export const RemainingSpace = styled.div`
 
 export const NavbarContainer = styled.div`
     width: 60%;
-    height: 100%;
+    height: 100vh;
     position: absolute;
     top:0;
+    z-index: 100;
     right:${props=>props.visible ? "0" : "-100%"};
     color:var(--clr-700);
     background-color: var(--clr-100);
@@ -43,9 +44,6 @@ export const LinksLi = styled.li`
 
     span:hover {
         color:var(--clr-900);
-    }
-    &:hover{
-        color:var(--clr-900)
     }
 `
 export const Account = styled(Links)`
