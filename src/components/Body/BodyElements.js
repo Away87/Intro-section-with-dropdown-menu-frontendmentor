@@ -15,13 +15,19 @@ export const Container = styled.div`
 
     }
 `
+
+const fadeIn = keyframes`
+    0% {opacity:0;}
+    100% {opacity:1;}
+`
+
 export const PictureGroup = styled.picture`
     padding-right:1em;
     & > * {
         width:100%;
         max-width:40em;
         min-width:20em;
-
+        animation:${fadeIn} 0.5s ease-in;
     }
 
     @media screen and (min-width:40em) {
@@ -57,13 +63,17 @@ export const TextContainer = styled.div`
         flex-direction:column;
         gap: 2em;
         position: relative;
-        /* animation:${LeftToRight} 0.5s ease-in; */
+        
+        & > * {
+            animation:${LeftToRight} 300ms ease-in;
+        }
     }
 `
 export const Heading = styled.h1`
     font-size: var(--fs-l);
     @media screen and (min-width:40em) {
         font-size: var(--fs-l);
+
         span{
             white-space: nowrap;
         }

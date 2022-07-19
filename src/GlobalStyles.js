@@ -16,6 +16,12 @@ export const GlobalStyle = createGlobalStyle`
         overflow-x: hidden;
     }
 
+    html {
+        outline:2px solid red;
+    }
+    body{
+        outline:2px solid green;
+    }
     :root {
         --clr-100: hsl(0, 0%, 100%);
         --clr-200 : hsl(0, 0%, 98%);

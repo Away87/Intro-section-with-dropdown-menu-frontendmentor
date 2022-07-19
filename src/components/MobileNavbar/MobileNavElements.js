@@ -11,6 +11,7 @@ export const RemainingSpace = styled.div`
     background: rgba(0, 0, 0, 1);
     opacity: ${props=>props.visible ? "0.7" : "0"};
     transition: opacity 0.2s ease-in;
+    outline:2px solid yellow;
 `
 
 export const NavbarContainer = styled.div`
@@ -24,6 +25,7 @@ export const NavbarContainer = styled.div`
     background-color: var(--clr-100);
     font-size: var(--fs-s);
     transition:right 0.2s ease-in;
+    outline:2px solid yellow;
 `
 
 export const CloseIcon = styled.img`

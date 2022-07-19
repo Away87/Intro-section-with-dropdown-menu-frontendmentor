@@ -1,7 +1,15 @@
-import styled from "styled-components"
+import styled,{keyframes} from "styled-components"
 import {FaBars} from "react-icons/fa";
 import {GoChevronUp, GoChevronDown} from "react-icons/go"
 
+const NavLoad = keyframes`
+    0%{
+        transform:translateY(-100%);
+    };
+    100%{
+        transform:translateY(0%);
+    }
+`
 
 export const NavbarContainer = styled.nav`
     display: flex;
@@ -11,6 +19,7 @@ export const NavbarContainer = styled.nav`
     font-size: var(--fs-s);
     background-color: var(--clr-100);
     z-index: 100;
+    animation: ${NavLoad} 300ms ease-in;
 
     @media screen and (min-width:40em) {
         position:absolute;
@@ -62,7 +71,7 @@ export const LinksLi = styled.li`
     
     &:hover {
         color:var(--clr-900);
-    }
+    }    
 
     div{
         position:absolute;
@@ -81,6 +90,7 @@ export const LinksLi = styled.li`
     span:hover {
         color:var(--clr-900 );
     }
+    
 `
 
 export const Account =styled(Links)`

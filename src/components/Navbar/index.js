@@ -18,16 +18,18 @@ import {Dropdown1, Dropdown2} from "../MobileNavbar";
 
 
 const Navbar = () => {
+  // States
   const [MobileNav, setMobileNav] = useState(false)
   const [Drop1, setDrop1] = useState(false);
   const [Drop2, setDrop2] = useState(false);
 
+  // To remove mobile nav beyond 800px
   useInterval(()=>{
     const windowWidth = window.innerWidth
     if (windowWidth > 800) {setMobileNav(false)}
   }, MobileNav ? 100 : null)
 
-
+  // Trigger dropdown1
   useEffect(()=>{
     const DropDown1 = document.querySelector(".dropDown1")
     const Container = document.querySelector(".Drop1Container")
@@ -36,14 +38,17 @@ const Navbar = () => {
     Container.style.display = Drop1 ? "block" : "none"
   },[Drop1]);
 
+  // Trigger dropdown2
   useEffect(()=>{
     const DropDown2 = document.querySelector(".dropDown2")
     const Container = document.querySelector(".Drop2Container")
-    DropDown2.style.display = Drop2 ? "blocl" : "none"
+    DropDown2.style.display = Drop2 ? "block" : "none"
     Container.style.opacity = Drop2 ? "1" : "0"
     Container.style.display = Drop2 ? "block" : "none"
   },[Drop2]);
 
+  // To close DropDown by clicking somewhere else
+    // TO COME
   return (
     <>
     <NavbarContainer>
