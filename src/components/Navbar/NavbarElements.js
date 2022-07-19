@@ -60,12 +60,10 @@ export const LinksLi = styled.li`
     cursor:pointer;
     text-transform: capitalize;
     
-    span {
-    }
-
     &:hover {
         color:var(--clr-900);
     }
+
     div{
         position:absolute;
         background-color: var(--clr-100);
@@ -73,6 +71,7 @@ export const LinksLi = styled.li`
         border-radius: 5%;
         padding: 1em 1.5em;
         top:3em;
+        opacity:0;
     }
 
     &:nth-of-type(2){

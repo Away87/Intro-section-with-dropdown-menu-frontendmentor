@@ -4,10 +4,10 @@ import {GoChevronUp, GoChevronDown} from "react-icons/go"
 export const RemainingSpace = styled.div`
     position:absolute;
     top:0;
-    left:0;
+    left:${props=>props.visible? "0" : "-100%" };
     width:40%;
     height: 100vh;
-    z-index:100;
+    z-index:var(--z-index-100);
     background: rgba(0, 0, 0, 1);
     opacity: ${props=>props.visible ? "0.7" : "0"};
     transition: opacity 0.2s ease-in;
@@ -82,9 +82,7 @@ export const DownArrow = styled(GoChevronDown)`
 // DropDown 1
 
 export const Dropul = styled.ul`
-    margin-left:1em;
-    display:none;
-    
+    margin-left:1em;    
     @media screen and (min-width: 50em){
         margin-left:0;
     }

@@ -27,6 +27,10 @@ export const GlobalStyle = createGlobalStyle`
         --fs-s: clamp(1rem, 1vw + 0.05rem, 6rem);
         --fs-xs: clamp(0.9rem, 1vw + 0.05rem, 0.9rem);
 
+        --z-index-900: 100;
+        --z-index-500:50;
+        --z-index-100: 0;
+
     }
 
     a {

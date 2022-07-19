@@ -19,27 +19,29 @@ import {Dropdown1, Dropdown2} from "../MobileNavbar";
 
 const Navbar = () => {
   const [MobileNav, setMobileNav] = useState(false)
+  const [Drop1, setDrop1] = useState(false);
+  const [Drop2, setDrop2] = useState(false);
 
   useInterval(()=>{
     const windowWidth = window.innerWidth
     if (windowWidth > 800) {setMobileNav(false)}
   }, MobileNav ? 100 : null)
 
-  const [Drop1, setDrop1] = useState(false);
-  const [Drop2, setDrop2] = useState(false);
 
   useEffect(()=>{
     const DropDown1 = document.querySelector(".dropDown1")
-    let visible = false;
-    Drop1 ? visible = true : visible = false
-    DropDown1.style.display = visible ? "block" : "none"
+    const Container = document.querySelector(".Drop1Container")
+    DropDown1.style.display = Drop1 ? "block" : "none"
+    Container.style.opacity = Drop1 ? "1" : "0"
+    Container.style.display = Drop1 ? "block" : "none"
   },[Drop1]);
 
   useEffect(()=>{
     const DropDown2 = document.querySelector(".dropDown2")
-    let visible = false;
-    Drop2 ? visible = true : visible = false
-    DropDown2.style.display = visible ? "block" : "none"
+    const Container = document.querySelector(".Drop2Container")
+    DropDown2.style.display = Drop2 ? "blocl" : "none"
+    Container.style.opacity = Drop2 ? "1" : "0"
+    Container.style.display = Drop2 ? "block" : "none"
   },[Drop2]);
 
   return (
@@ -53,8 +55,8 @@ const Navbar = () => {
             <LinksLi onClick={()=>{
               if (Drop1) {setDrop1(false)}
               else{setDrop1(true)}
-            }}><span>features</span>{Drop1 ? <UpArrow/> : <DownArrow/>}
-            <Dropdown1/>
+            }}><span>features{Drop1 ? <UpArrow/> : <DownArrow/>}</span>
+            <div className='Drop1Container'><Dropdown1/></div>
             </LinksLi>
 
 
@@ -62,8 +64,8 @@ const Navbar = () => {
             <LinksLi onClick={()=>{
               if (Drop2) {setDrop2(false)}
               else{setDrop2(true)}
-            }}><span>company</span>{Drop2 ? <UpArrow/> : <DownArrow/>}
-            <Dropdown2/>
+            }}><span>company{Drop2 ? <UpArrow/> : <DownArrow/>}</span>
+            <div className='Drop2Container'><Dropdown2/></div>
             </LinksLi>
 
             <LinksLi><span>careers</span></LinksLi>

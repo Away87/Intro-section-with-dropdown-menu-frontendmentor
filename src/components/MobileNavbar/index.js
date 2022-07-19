@@ -87,7 +87,7 @@ const MobileNavbar = (props) => {
             <LinksLi onClick={()=>{
               if (Drop1) {setDrop1(false)}
               else{setDrop1(true)}
-            }}><span>features</span>{Drop1 ? <UpArrow/> : <DownArrow/>}
+            }}><span>features{Drop1 ? <UpArrow/> : <DownArrow/>}</span>
             <Dropdown1/>
             </LinksLi>
 
@@ -96,7 +96,7 @@ const MobileNavbar = (props) => {
             <LinksLi onClick={()=>{
               if (Drop2) {setDrop2(false)}
               else{setDrop2(true)}
-            }}><span>company</span>{Drop2 ? <UpArrow/> : <DownArrow/>}
+            }}><span>company{Drop2 ? <UpArrow/> : <DownArrow/>}</span>
             <Dropdown2/>
             </LinksLi>
 

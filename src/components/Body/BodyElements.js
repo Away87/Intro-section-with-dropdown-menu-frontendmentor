@@ -1,9 +1,10 @@
-import styled from 'styled-components'
+import styled,{keyframes} from 'styled-components'
 
 export const Container = styled.div`
     width: 100%;
     overflow:hidden;
-    padding-bottom: 5em;    
+    padding-bottom: 5em; 
+    z-index:var(--z-index-500);   
     @media screen and (min-width:40em) {
         height:34em;
         display:flex;
@@ -29,13 +30,19 @@ export const PictureGroup = styled.picture`
         }
     }
 `
+
+const LeftToRight = keyframes`
+    0% {transform:translateX(-100%);}
+    100% {transform:translateX(0%);}
+`
+
 export const TextContainer = styled.div`
     text-align: center;
     padding:2em 1.5em;
     height: 100%;
     display: flex;
     align-items: center;
-    /* flex-direction: column; */
+    overflow:hidden;
     height: 100%;
     
     @media screen and (min-width:40em) {
@@ -50,6 +57,7 @@ export const TextContainer = styled.div`
         flex-direction:column;
         gap: 2em;
         position: relative;
+        /* animation:${LeftToRight} 0.5s ease-in; */
     }
 `
 export const Heading = styled.h1`
@@ -78,6 +86,7 @@ export const Button = styled.button`
     background-color:var(--clr-900);
     border:none;
     border-radius: 10px;
+    cursor: pointer;
 
     &:hover {
     transform:scale(1.1);
