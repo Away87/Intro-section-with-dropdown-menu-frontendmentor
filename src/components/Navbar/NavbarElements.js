@@ -18,16 +18,8 @@ export const NavbarContainer = styled.nav`
     align-items: center;
     font-size: var(--fs-s);
     background-color: var(--clr-100);
-    z-index: 100;
+    overflow: hidden;
     animation: ${NavLoad} 300ms ease-in;
-
-    @media screen and (min-width:40em) {
-        position:absolute;
-        top:0;
-        left:0;
-        right:0;
-        bottom:0;
-    }
 `
 
 export const Logo = styled.img`
@@ -35,7 +27,7 @@ export const Logo = styled.img`
     display: flex;
     margin-left: 2em;
 `
-export const MobileBar = styled(FaBars)`
+export const Bar = styled(FaBars)`
     display: none;
     font-size: 35px;
     width: 100px;

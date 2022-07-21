@@ -81,8 +81,10 @@ const MobileNavbar = (props) => {
   return (
     <>
     <RemainingSpace visible={props.visible}/>
-    <NavbarContainer visible={props.visible ? true : false}>
-      <CloseIcon src={Cross} alt="A cross" onClick={()=>props.toggleNav(false)} />
+    <NavbarContainer visible={props.visible ? true : false} className="mobile-navbar">
+      <CloseIcon src={Cross} alt="A cross" onClick={()=>{
+        props.toggleNav(false)
+        }} />
         <Links>
             <LinksLi onClick={()=>{
               if (Drop1) {setDrop1(false)}

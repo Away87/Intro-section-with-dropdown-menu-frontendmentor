@@ -3,7 +3,7 @@ import { useInterval } from 'usehooks-ts'
 import {
     NavbarContainer,
     Logo,
-    MobileBar,
+    Bar,
     Links,
     LinksLi,
     Account,
@@ -47,13 +47,30 @@ const Navbar = () => {
     Container.style.display = Drop2 ? "block" : "none"
   },[Drop2]);
 
-  // To close DropDown by clicking somewhere else
-    // TO COME
+  // To stop scrolling if mobileNavbar is active
+
+  useEffect(()=>{
+    if(MobileNav) {
+      const HorizontalPosition = window.pageXOffset
+      const VerticalPosition = window.pageYOffset
+      console.log("true")
+      window.onscroll = () => {
+        window.scrollTo(HorizontalPosition, VerticalPosition)
+      }
+    }
+    else{
+      console.log("false")
+      window.onscroll= ()=>{}
+    }
+  },[MobileNav])
+  
   return (
     <>
     <NavbarContainer>
         <Logo src={LogoImg} />
-        <MobileBar onClick={()=>setMobileNav(true)}/>
+        <Bar onClick={()=>{
+          setMobileNav(true)
+          }}/>
         <MobileNavbar visible={MobileNav ? true : false} toggleNav={()=>setMobileNav()} />
         
         <Links>

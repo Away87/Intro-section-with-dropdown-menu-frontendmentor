@@ -6,26 +6,25 @@ export const RemainingSpace = styled.div`
     top:0;
     left:${props=>props.visible? "0" : "-100%" };
     width:40%;
-    height: 100vh;
-    z-index:var(--z-index-100);
+    height: 100%;
     background: rgba(0, 0, 0, 1);
     opacity: ${props=>props.visible ? "0.7" : "0"};
+    z-index:var(--z-index-900);
     transition: opacity 0.2s ease-in;
-    outline:2px solid yellow;
 `
 
 export const NavbarContainer = styled.div`
     width: 60%;
-    height: 100vh;
+    height: 100%;
     position: absolute;
     top:0;
-    z-index: 100;
-    right:${props=>props.visible ? "0" : "-100%"};
+    right:0;
+    z-index:var(--z-index-900);
     color:var(--clr-700);
     background-color: var(--clr-100);
     font-size: var(--fs-s);
-    transition:right 0.2s ease-in;
-    outline:2px solid yellow;
+    transform: translateX(${props=>props.visible ? "0" : "100%"});
+    transition:transform 0.2s ease-in;
 `
 
 export const CloseIcon = styled.img`

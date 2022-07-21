@@ -13,14 +13,23 @@ export const GlobalStyle = createGlobalStyle`
 
     body , html {
         width: 100%;
-        overflow-x: hidden;
-    }
+        overflow-x:hidden;
 
-    html {
-        outline:2px solid red;
-    }
-    body{
-        outline:2px solid green;
+        ::-webkit-scrollbar{
+            width:10px;
+        }
+
+        ::-webkit-scrollbar-track{
+            background-color:-var(--clr-100);
+        }
+
+        ::-webkit-scrollbar-thumb{
+            background-color:rgba(100,100,100,0.2);
+        }
+
+        ::-webkit-scrollbar-thumb:hover{
+            background-color:rgba(23,23,23,0.2);
+        }
     }
     :root {
         --clr-100: hsl(0, 0%, 100%);
@@ -45,16 +54,14 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     main {
-        height: calc(100vh - 5em);
         background-color:var(--clr-100);
         
         @media screen and (min-width:40em) {
-            z-index: 1;
             width:100%;
             display:flex;
             margin:0 auto;
             align-items: center;
-            height: 100vh;
+            height: calc(100vh - 5.3em);
         }
     }
 

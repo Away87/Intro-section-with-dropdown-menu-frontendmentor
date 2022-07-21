@@ -1,10 +1,19 @@
 import styled,{keyframes} from 'styled-components'
 
+const fadeIn = keyframes`
+    0% {opacity:0;}
+    100% {opacity:1;}
+`
+
+const LeftToRight = keyframes`
+    0% {transform:translateX(-100%);}
+    100% {transform:translateX(0%);}
+`
+
 export const Container = styled.div`
     width: 100%;
     overflow:hidden;
-    padding-bottom: 5em; 
-    z-index:var(--z-index-500);   
+    padding-bottom: 5em;  
     @media screen and (min-width:40em) {
         height:34em;
         display:flex;
@@ -12,13 +21,7 @@ export const Container = styled.div`
         padding-bottom: 0;
         justify-content: space-evenly;
         align-items: center;
-
     }
-`
-
-const fadeIn = keyframes`
-    0% {opacity:0;}
-    100% {opacity:1;}
 `
 
 export const PictureGroup = styled.picture`
@@ -27,19 +30,15 @@ export const PictureGroup = styled.picture`
         width:100%;
         max-width:40em;
         min-width:20em;
-        animation:${fadeIn} 0.5s ease-in;
+        animation:${LeftToRight} 0.2s ease-in;
     }
-
+    
     @media screen and (min-width:40em) {
         & > * {
             max-width:25em;
+            animation:${fadeIn} 0.5s ease-in;
         }
     }
-`
-
-const LeftToRight = keyframes`
-    0% {transform:translateX(-100%);}
-    100% {transform:translateX(0%);}
 `
 
 export const TextContainer = styled.div`
@@ -119,8 +118,6 @@ export const Clients = styled.ul`
         padding: 0;
         position: absolute;
         bottom: -32%;
-        /* left:0; */
-
     }
     `
 export const ClientLi = styled.li`
