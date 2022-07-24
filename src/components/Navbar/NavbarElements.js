@@ -12,16 +12,14 @@ const NavLoad = keyframes`
 `
 
 export const NavbarContainer = styled.nav`
-    overflow: hidden;
-    /* position: relative;
-    z-index: var(--z-index-900); */
+    /* overflow: hidden; */
     display: flex;
     height: 5em;
     margin: 0 auto;
     align-items: center;
     font-size: var(--fs-s);
     background-color: var(--clr-100);
-    overflow: hidden;
+    /* overflow: hidden; */
     animation: ${NavLoad} 300ms ease-in;
 `
 
@@ -70,6 +68,7 @@ export const LinksLi = styled.li`
 
     div{
         position:absolute;
+        z-index: 1000;
         background-color: var(--clr-100);
         box-shadow: 0px 0px 2em 20px hsla(0, 0%, 8%, 0.1);
         border-radius: 5%;

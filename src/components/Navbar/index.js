@@ -26,8 +26,20 @@ const Navbar = () => {
   // To remove mobile nav beyond 800px
   useInterval(()=>{
     const windowWidth = window.innerWidth
-    if (windowWidth > 800) {setMobileNav(false)}
+    if (windowWidth > 800) {
+      setMobileNav(false)
+      setDrop1(false)
+      setDrop2(false)
+    }
   }, MobileNav ? 100 : null)
+
+  useInterval(()=>{
+    const windowWidth = window.innerWidth
+    if (windowWidth < 800) {
+      setDrop1(false)
+      setDrop2(false)
+    }
+  }, Drop1 ? 100 : null || Drop2 ? 100 : null)
 
   // Trigger dropdown1
   useEffect(()=>{

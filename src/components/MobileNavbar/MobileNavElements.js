@@ -2,33 +2,31 @@ import styled,{keyframes} from "styled-components"
 import {GoChevronUp, GoChevronDown} from "react-icons/go"
 
 export const RemainingSpace = styled.div`
-    position:absolute;
+    position:fixed;
     top:0;
-    left:${props=>props.visible? "0" : "-100%" };
+    left:0;
+    transform: translateX(${props=>props.visible ? "0" : "-100%"});
     width:100%;
     height: 100%;
     background: rgba(0, 0, 0, 1);
     opacity: ${props=>props.visible ? "0.7" : "0"};
     z-index:var(--z-index-900);
-    transition: opacity 0.5s ease-in 0.1s;
+    transition: opacity 0.2s ease-in;
 `
 
 export const NavbarContainer = styled.div`
     width: 60%;
     height: 100%;
-    /* position: absolute; */
     top:0;
     right:0;
-    /* z-index:var(--z-index-900); */
     color:var(--clr-700);
     background-color: var(--clr-100);
     font-size: var(--fs-s);
     transform: translateX(${props=>props.visible ? "0" : "100%"});
-    transition:transform 0.2s ease-in;
 
     position: fixed;
     z-index: 1000;
-    transition: transform 0.5s ease-in 0.1s;
+    transition: transform 0.2s ease-in;
 `
 
 export const CloseIcon = styled.img`
