@@ -13,7 +13,6 @@ export const GlobalStyle = createGlobalStyle`
 
     body , html {
         width: 100%;
-        overflow-x:hidden;
 
         ::-webkit-scrollbar{
             width:10px;

@@ -12,6 +12,9 @@ const NavLoad = keyframes`
 `
 
 export const NavbarContainer = styled.nav`
+    overflow: hidden;
+    /* position: relative;
+    z-index: var(--z-index-900); */
     display: flex;
     height: 5em;
     margin: 0 auto;

@@ -13,7 +13,7 @@ const LeftToRight = keyframes`
 export const Container = styled.div`
     width: 100%;
     overflow:hidden;
-    padding-bottom: 5em;  
+    padding-bottom: 5em;
     @media screen and (min-width:40em) {
         height:34em;
         display:flex;
